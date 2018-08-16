@@ -1,0 +1,10 @@
+from thread import start_new_thread
+
+def threadfun(count,dec,thread_no):
+    while count>0:
+        count=count-dec
+        print "thread",thread_no,"count=",count
+        
+
+start_new_thread(threadfun,(10,2,1))
+start_new_thread(threadfun,(15,3,2))

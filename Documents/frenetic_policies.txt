@@ -1,0 +1,21 @@
+frenetic policies:
+
+ 
+identity returns original packet
+none returns empty set
+match(f=v) identify if field f matches v,
+none otherwise
+modify(f=v) returns packet with field f set to v
+fwd(a) a==port number
+modify(port=a)
+flood() returns one packet for each local port
+on the network spanning tree 
+drop
+ 
+parallel composition
+eg fwd(1)+fwd(2)
+
+sequential composition : use of right shift operator
+eg. match(f=v)>>fwd(1)
+
+mac_learner()module in pyretic.modules.mac_learner
